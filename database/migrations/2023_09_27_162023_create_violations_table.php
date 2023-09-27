@@ -15,7 +15,7 @@ return new class extends Migration
       $table->id();
       $table->string('uuid');
       $table->string('code');
-      $table->string('name')->unique();
+      $table->string('name');
       $table->float('point');
       $table->timestamps();
     });
