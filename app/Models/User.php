@@ -13,6 +13,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -162,5 +164,15 @@ class User extends Authenticatable
     }
 
     return "<span class='{$badgeClass}'>{$roleName}</span>";
+  }
+
+  /**
+   * Relation to room model.
+   *
+   * @return HasOne
+   */
+  public function room(): HasOne
+  {
+    return $this->hasOne(Room::class, 'user_id');
   }
 }

@@ -52,4 +52,30 @@ return [
     'delete' => 'Hapus Permanen Pelanggaran yang sudah Terhapus dari penyimpanan',
     'restore' => 'Restore Data Pelanggaran yang ditentukan dari penyimpanan yang sudah dihapus',
   ],
+
+  'students' => [
+    'name' => 'Management Siswa',
+    'index' => 'Menampilkan daftar Siswa',
+    'create' => 'Tampilkan formulir untuk membuat Siswa baru',
+    'store' => 'Simpan Siswa yang baru dibuat di penyimpanan',
+    'show' => 'Menampilkan Detail Siswa yang ditentukan',
+    'edit' => 'Tampilkan formulir untuk mengedit Siswa yang ditentukan',
+    'update' => 'Perbarui Siswa yang ditentukan dalam penyimpanan',
+    'destroy' => 'Hapus Siswa yang ditentukan dari penyimpanan',
+    'delete' => 'Hapus Permanen Siswa yang sudah Terhapus dari penyimpanan',
+    'restore' => 'Restore Data Siswa yang ditentukan dari penyimpanan yang sudah dihapus',
+  ],
+
+  'rooms' => [
+    'name' => 'Management Kelas',
+    'index' => 'Menampilkan daftar Kelas',
+    'create' => 'Tampilkan formulir untuk membuat Kelas baru',
+    'store' => 'Simpan Kelas yang baru dibuat di penyimpanan',
+    'show' => 'Menampilkan Detail Kelas yang ditentukan',
+    'edit' => 'Tampilkan formulir untuk mengedit Kelas yang ditentukan',
+    'update' => 'Perbarui Kelas yang ditentukan dalam penyimpanan',
+    'destroy' => 'Hapus Kelas yang ditentukan dari penyimpanan',
+    'delete' => 'Hapus Permanen Kelas yang sudah Terhapus dari penyimpanan',
+    'restore' => 'Restore Data Kelas yang ditentukan dari penyimpanan yang sudah dihapus',
+  ],
 ];

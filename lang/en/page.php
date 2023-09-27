@@ -48,4 +48,22 @@ return [
     'show' => 'Detail Pelanggaran',
     'delete' => 'Hapus Pelanggaran',
   ],
+
+  'students' => [
+    'title' => 'Siswa',
+    'index' => 'Daftar Siswa',
+    'create' => 'Tambah Siswa',
+    'edit' => 'Ubah Siswa',
+    'show' => 'Detail Siswa',
+    'delete' => 'Hapus Siswa',
+  ],
+
+  'rooms' => [
+    'title' => 'Kelas',
+    'index' => 'Daftar Kelas',
+    'create' => 'Tambah Kelas',
+    'edit' => 'Ubah Kelas',
+    'show' => 'Detail Kelas',
+    'delete' => 'Hapus Kelas',
+  ],
 ];

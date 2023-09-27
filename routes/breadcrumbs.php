@@ -95,3 +95,47 @@ Breadcrumbs::for('violations.show', function (BreadcrumbTrail $trail, $violation
   $trail->push(trans('page.violations.show'), route('violations.show', $violation->uuid));
 });
 // violations Breadcrumbs
+
+// students Breadcrumbs
+Breadcrumbs::for('students.index', function (BreadcrumbTrail $trail) {
+  $trail->parent('home');
+  $trail->push(trans('page.students.index'), route('students.index'));
+});
+
+Breadcrumbs::for('students.create', function (BreadcrumbTrail $trail) {
+  $trail->parent('students.index');
+  $trail->push(trans('page.students.create'), route('students.create'));
+});
+
+Breadcrumbs::for('students.edit', function (BreadcrumbTrail $trail, $student) {
+  $trail->parent('students.index');
+  $trail->push(trans('page.students.edit'), route('students.edit', $student->uuid));
+});
+
+Breadcrumbs::for('students.show', function (BreadcrumbTrail $trail, $student) {
+  $trail->parent('students.index');
+  $trail->push(trans('page.students.show'), route('students.show', $student->uuid));
+});
+// students Breadcrumbs
+
+// rooms Breadcrumbs
+Breadcrumbs::for('rooms.index', function (BreadcrumbTrail $trail) {
+  $trail->parent('home');
+  $trail->push(trans('page.rooms.index'), route('rooms.index'));
+});
+
+Breadcrumbs::for('rooms.create', function (BreadcrumbTrail $trail) {
+  $trail->parent('rooms.index');
+  $trail->push(trans('page.rooms.create'), route('rooms.create'));
+});
+
+Breadcrumbs::for('rooms.edit', function (BreadcrumbTrail $trail, $room) {
+  $trail->parent('rooms.index');
+  $trail->push(trans('page.rooms.edit'), route('rooms.edit', $room->uuid));
+});
+
+Breadcrumbs::for('rooms.show', function (BreadcrumbTrail $trail, $room) {
+  $trail->parent('rooms.index');
+  $trail->push(trans('page.rooms.show'), route('rooms.show', $room->uuid));
+});
+// rooms Breadcrumbs

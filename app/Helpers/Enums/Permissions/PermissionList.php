@@ -41,6 +41,23 @@ class PermissionList
       'violations.edit',
       'violations.update',
       'violations.destroy',
+
+      // Halaman Data Kelas
+      'rooms.index',
+      'rooms.create',
+      'rooms.store',
+      'rooms.edit',
+      'rooms.update',
+      'rooms.destroy',
+
+      // Halaman Data Siswa
+      'students.index',
+      'students.create',
+      'students.store',
+      'students.show',
+      'students.edit',
+      'students.update',
+      'students.destroy',
     ];
   }
 }

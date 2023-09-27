@@ -189,6 +189,7 @@ return [
     'Helper' => App\Helpers\Helper::class,
     'RoleType' => App\Helpers\Enums\RoleType::class,
     'DecideType' => App\Helpers\Enums\DecideType::class,
+    'GenderType' => App\Helpers\Enums\GenderType::class,
   ])->toArray(),
 
 ];

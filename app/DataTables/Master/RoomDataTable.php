@@ -2,8 +2,9 @@
 
 namespace App\DataTables\Master;
 
-use App\Models\Violation;
-use App\Services\Violation\ViolationService;
+use App\Helpers\Helper;
+use App\Models\Room;
+use App\Services\Room\RoomService;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -13,7 +14,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class ViolationDataTable extends DataTable
+class RoomDataTable extends DataTable
 {
   /**
    * Create a new datatables instance.
@@ -21,7 +22,7 @@ class ViolationDataTable extends DataTable
    * @return void
    */
   public function __construct(
-    protected ViolationService $violationService,
+    protected RoomService $roomService,
   ) {
     // 
   }
@@ -35,7 +36,9 @@ class ViolationDataTable extends DataTable
   {
     return (new EloquentDataTable($query))
       ->addIndexColumn()
-      ->addColumn('action', 'violations.action')
+      ->addColumn('wali_kelas', fn ($row) => $row->user->name)
+      ->editColumn('updated_at', fn ($row) => Helper::parseDateTime($row->updated_at))
+      ->addColumn('action', 'rooms.action')
       ->rawColumns([
         'action',
       ]);
@@ -44,9 +47,9 @@ class ViolationDataTable extends DataTable
   /**
    * Get the query source of dataTable.
    */
-  public function query(Violation $model): QueryBuilder
+  public function query(Room $model): QueryBuilder
   {
-    return $this->violationService->getQuery()->oldest('code');
+    return $this->roomService->getQuery()->oldest('name');
   }
 
   /**
@@ -55,7 +58,7 @@ class ViolationDataTable extends DataTable
   public function html(): HtmlBuilder
   {
     return $this->builder()
-      ->setTableId('violation-table')
+      ->setTableId('room-table')
       ->columns($this->getColumns())
       ->minifiedAjax()
       ->addTableClass([
@@ -87,14 +90,14 @@ class ViolationDataTable extends DataTable
         ->searchable(false)
         ->width('5%')
         ->addClass('text-center'),
-      Column::make('code')
-        ->title(trans('Kode'))
-        ->addClass('text-center'),
       Column::make('name')
         ->title(trans('Nama'))
         ->addClass('text-center'),
-      Column::make('point')
-        ->title(trans('Point Pelanggaran'))
+      Column::make('wali_kelas')
+        ->title(trans('Wali Kelas'))
+        ->addClass('text-center'),
+      Column::make('updated_at')
+        ->title(trans('Terakhir Diperbarui'))
         ->addClass('text-center'),
       Column::computed('action')
         ->exportable(false)
@@ -109,6 +112,6 @@ class ViolationDataTable extends DataTable
    */
   protected function filename(): string
   {
-    return 'Violation_' . date('YmdHis');
+    return 'Room_' . date('YmdHis');
   }
 }

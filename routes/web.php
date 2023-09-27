@@ -5,8 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Settings\RoleController;
 use App\Http\Controllers\Settings\UserController;
 use App\Http\Controllers\Master\ViolationController;
+use App\Http\Controllers\Settings\StudentController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Master\AchievementController;
+use App\Http\Controllers\Master\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,9 @@ Route::middleware([
     // User management.
     Route::patch('users/status/{user}', [UserController::class, 'status'])->name('users.status');
     Route::resource('users', UserController::class);
+
+    // Student Management
+    Route::resource('students', StudentController::class);
   });
 
   // Management password users.
@@ -52,5 +57,8 @@ Route::middleware([
 
     // Violation management.
     Route::resource('violations', ViolationController::class)->except('show');
+
+    // Room management
+    Route::resource('rooms', RoomController::class)->except('show');
   });
 });
