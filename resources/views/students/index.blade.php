@@ -34,11 +34,14 @@
 
   </div>
 </div>
+
+@includeIf('students.show')
 @endsection
 @push('javascript')
 {{ $dataTable->scripts() }}
 @vite('resources/js/students/index.js')
 <script>
+  var urlShowDetail = "{{ route('students.show', ':uuid') }}"
   var urlDestroy = "{{ route('students.destroy', ':uuid') }}"
 
 </script>

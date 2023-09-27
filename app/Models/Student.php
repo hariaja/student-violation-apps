@@ -49,6 +49,15 @@ class Student extends Model
   ];
 
   /**
+   * Relation model.
+   *
+   * @var array
+   */
+  protected $with = [
+    'room',
+  ];
+
+  /**
    * Declar gender label.
    *
    * @return Attribute

@@ -7,10 +7,7 @@ use App\Services\Student\StudentService;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
-use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class StudentDataTable extends DataTable
@@ -34,7 +31,9 @@ class StudentDataTable extends DataTable
   public function dataTable(QueryBuilder $query): EloquentDataTable
   {
     return (new EloquentDataTable($query))
+      ->addIndexColumn()
       ->editColumn('gender', fn ($row) => $row->genderLabel)
+      ->addColumn('room_name', fn ($row) => $row->room->name)
       ->addColumn('action', 'students.action')
       ->rawColumns([
         'action',
@@ -97,10 +96,13 @@ class StudentDataTable extends DataTable
       Column::make('phone')
         ->title(trans('Handphone'))
         ->addClass('text-center'),
+      Column::make('gender')
+        ->title(trans('Gender'))
+        ->addClass('text-center'),
       Column::computed('action')
         ->exportable(false)
         ->printable(false)
-        ->width('5%')
+        ->width('10%')
         ->addClass('text-center'),
     ];
   }

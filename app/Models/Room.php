@@ -32,6 +32,15 @@ class Room extends Model
   }
 
   /**
+   * Relation model.
+   *
+   * @var array
+   */
+  protected $with = [
+    'user',
+  ];
+
+  /**
    * Relation to user model.
    *
    * @return BelongsTo
