@@ -30,4 +30,13 @@ return [
     'show' => 'Detail Role & Permission',
     'delete' => 'Hapus Role & Permission',
   ],
+
+  'achievements' => [
+    'title' => 'Prestasi',
+    'index' => 'Daftar Prestasi',
+    'create' => 'Tambah Prestasi',
+    'edit' => 'Ubah Prestasi',
+    'show' => 'Detail Prestasi',
+    'delete' => 'Hapus Prestasi',
+  ],
 ];

@@ -46,7 +46,7 @@
 
     @can('users.create')
     <div class="mb-4">
-      <a href="{{ route('users.create') }}" class="btn btn-primary">
+      <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary">
         <i class="fa fa-plus fa-sm me-1"></i>
         {{ trans('page.users.create') }}
       </a>

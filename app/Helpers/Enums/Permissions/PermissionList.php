@@ -25,6 +25,14 @@ class PermissionList
       'roles.edit',
       'roles.update',
       'roles.destroy',
+
+      // Halaman Achievement
+      'achievements.index',
+      'achievements.create',
+      'achievements.store',
+      'achievements.edit',
+      'achievements.update',
+      'achievements.destroy',
     ];
   }
 }

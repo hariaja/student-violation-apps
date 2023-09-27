@@ -24,4 +24,15 @@ return [
     'delete' => 'Hapus Permanen Peran yang sudah Terhapus dari penyimpanan',
     'restore' => 'Restore Data Peran yang ditentukan dari penyimpanan yang sudah dihapus',
   ],
+
+  'achievements' => [
+    'name' => 'Management Prestasi',
+    'index' => 'Menampilkan daftar Prestasi',
+    'show' => 'Menampilkan Detail Prestasi yang ditentukan',
+    'edit' => 'Tampilkan formulir untuk mengedit Prestasi yang ditentukan',
+    'update' => 'Perbarui Prestasi yang ditentukan dalam penyimpanan',
+    'destroy' => 'Hapus Prestasi yang ditentukan dari penyimpanan',
+    'delete' => 'Hapus Permanen Prestasi yang sudah Terhapus dari penyimpanan',
+    'restore' => 'Restore Data Prestasi yang ditentukan dari penyimpanan yang sudah dihapus',
+  ],
 ];

@@ -51,3 +51,25 @@ Breadcrumbs::for('users.show', function (BreadcrumbTrail $trail, $user) {
   $trail->push(trans('page.users.show'), route('users.show', $user->uuid));
 });
 // Users Breadcrumbs
+
+// achievements Breadcrumbs
+Breadcrumbs::for('achievements.index', function (BreadcrumbTrail $trail) {
+  $trail->parent('home');
+  $trail->push(trans('page.achievements.index'), route('achievements.index'));
+});
+
+Breadcrumbs::for('achievements.create', function (BreadcrumbTrail $trail) {
+  $trail->parent('achievements.index');
+  $trail->push(trans('page.achievements.create'), route('achievements.create'));
+});
+
+Breadcrumbs::for('achievements.edit', function (BreadcrumbTrail $trail, $achievement) {
+  $trail->parent('achievements.index');
+  $trail->push(trans('page.achievements.edit'), route('achievements.edit', $achievement->uuid));
+});
+
+Breadcrumbs::for('achievements.show', function (BreadcrumbTrail $trail, $achievement) {
+  $trail->parent('achievements.index');
+  $trail->push(trans('page.achievements.show'), route('achievements.show', $achievement->uuid));
+});
+// achievements Breadcrumbs
