@@ -73,3 +73,25 @@ Breadcrumbs::for('achievements.show', function (BreadcrumbTrail $trail, $achieve
   $trail->push(trans('page.achievements.show'), route('achievements.show', $achievement->uuid));
 });
 // achievements Breadcrumbs
+
+// violations Breadcrumbs
+Breadcrumbs::for('violations.index', function (BreadcrumbTrail $trail) {
+  $trail->parent('home');
+  $trail->push(trans('page.violations.index'), route('violations.index'));
+});
+
+Breadcrumbs::for('violations.create', function (BreadcrumbTrail $trail) {
+  $trail->parent('violations.index');
+  $trail->push(trans('page.violations.create'), route('violations.create'));
+});
+
+Breadcrumbs::for('violations.edit', function (BreadcrumbTrail $trail, $violation) {
+  $trail->parent('violations.index');
+  $trail->push(trans('page.violations.edit'), route('violations.edit', $violation->uuid));
+});
+
+Breadcrumbs::for('violations.show', function (BreadcrumbTrail $trail, $violation) {
+  $trail->parent('violations.index');
+  $trail->push(trans('page.violations.show'), route('violations.show', $violation->uuid));
+});
+// violations Breadcrumbs

@@ -82,7 +82,7 @@
             </a>
           </li>
 
-          @canany(['achievements.index'])
+          @canany(['achievements.index', 'violations.index'])
           <li class="nav-main-heading">{{ trans('Master Data') }}</li>
 
           <li class="nav-main-item {{ Request::is('masters*') ? 'open' : '' }}">
@@ -95,6 +95,13 @@
               <li class="nav-main-item">
                 <a class="nav-main-link {{ Request::is('masters/achievements*') ? 'active' : '' }}" href="{{ route('achievements.index') }}">
                   <span class="nav-main-link-name">{{ trans('page.achievements.title') }}</span>
+                </a>
+              </li>
+              @endcan
+              @can('violations.index')
+              <li class="nav-main-item">
+                <a class="nav-main-link {{ Request::is('masters/violations*') ? 'active' : '' }}" href="{{ route('violations.index') }}">
+                  <span class="nav-main-link-name">{{ trans('page.violations.title') }}</span>
                 </a>
               </li>
               @endcan

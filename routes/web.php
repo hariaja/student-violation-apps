@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Master\AchievementController;
 use App\Http\Controllers\Settings\RoleController;
 use App\Http\Controllers\Settings\UserController;
+use App\Http\Controllers\Master\ViolationController;
 use App\Http\Controllers\Settings\PasswordController;
+use App\Http\Controllers\Master\AchievementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,5 +49,8 @@ Route::middleware([
   Route::prefix('masters')->group(function () {
     // Achievement management.
     Route::resource('achievements', AchievementController::class)->except('show');
+
+    // Violation management.
+    Route::resource('violations', ViolationController::class)->except('show');
   });
 });

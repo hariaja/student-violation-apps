@@ -39,4 +39,13 @@ return [
     'show' => 'Detail Prestasi',
     'delete' => 'Hapus Prestasi',
   ],
+
+  'violations' => [
+    'title' => 'Pelanggaran',
+    'index' => 'Daftar Pelanggaran',
+    'create' => 'Tambah Pelanggaran',
+    'edit' => 'Ubah Pelanggaran',
+    'show' => 'Detail Pelanggaran',
+    'delete' => 'Hapus Pelanggaran',
+  ],
 ];

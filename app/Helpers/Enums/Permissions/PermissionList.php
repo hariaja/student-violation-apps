@@ -26,13 +26,21 @@ class PermissionList
       'roles.update',
       'roles.destroy',
 
-      // Halaman Achievement
+      // Halaman Prestasi
       'achievements.index',
       'achievements.create',
       'achievements.store',
       'achievements.edit',
       'achievements.update',
       'achievements.destroy',
+
+      // Halaman Pelanggaran
+      'violations.index',
+      'violations.create',
+      'violations.store',
+      'violations.edit',
+      'violations.update',
+      'violations.destroy',
     ];
   }
 }

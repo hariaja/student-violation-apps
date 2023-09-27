@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Services\Achievement;
+namespace App\Services\Violation;
 
 use InvalidArgumentException;
 use Illuminate\Support\Facades\DB;
 use LaravelEasyRepository\Service;
 use Illuminate\Support\Facades\Log;
-use App\Repositories\Achievement\AchievementRepository;
+use App\Repositories\Violation\ViolationRepository;
 
-class AchievementServiceImplement extends Service implements AchievementService
+class ViolationServiceImplement extends Service implements ViolationService
 {
-
   /**
    * don't change $this->mainRepository variable name
    * because used in extends service class
    */
   public function __construct(
-    protected AchievementRepository $mainRepository
+    protected ViolationRepository $mainRepository
   ) {
     // 
   }
