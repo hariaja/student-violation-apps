@@ -36,7 +36,7 @@ Route::middleware([
 
     // User management.
     Route::patch('users/status/{user}', [UserController::class, 'status'])->name('users.status');
-    Route::resource('users', UserController::class)->except('edit');
+    Route::resource('users', UserController::class);
   });
 
   // Management password users.

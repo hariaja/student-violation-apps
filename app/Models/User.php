@@ -122,6 +122,19 @@ class User extends Authenticatable
   }
 
   /**
+   * Get all user except :value
+   *
+   * @param  mixed $query
+   * @return void
+   */
+  public function scopeWhereNotAdmin($query)
+  {
+    return $query->whereDoesntHave('roles', function ($row) {
+      $row->where('name', RoleType::ADMIN->value);
+    });
+  }
+
+  /**
    * Define badge type roles.
    *
    * @return string
@@ -132,7 +145,7 @@ class User extends Authenticatable
 
     switch ($roleName) {
       case RoleType::ADMIN->value:
-        $badgeClass = 'badge text-smooth';
+        $badgeClass = 'badge text-danger';
         break;
       case RoleType::BK->value:
         $badgeClass = 'badge text-info';

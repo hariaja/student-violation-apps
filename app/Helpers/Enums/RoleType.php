@@ -11,5 +11,5 @@ enum RoleType: string
   case ADMIN = 'Administrator';
   case BK = 'Pembimbing Konseling';
   case WALI = 'Wali Kelas';
-  case KEMAHASISWAAN = 'Kemahasiswaan';
+  case KEMAHASISWAAN = 'Kesiswaan';
 }

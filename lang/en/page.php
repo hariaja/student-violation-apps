@@ -9,6 +9,10 @@ return [
     'title' => 'Beranda',
   ],
 
+  'warning' => [
+    'password' => "Secara default password atau kata sandi pengguna ini adalah <b>password@baru123</b>, Beritahu pengguna untuk mengubah kata sandi secara berkala untuk menjaga keamanan akun Pengguna."
+  ],
+
   'users' => [
     'title' => 'Pengguna',
     'index' => 'Daftar Data Pengguna',
