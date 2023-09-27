@@ -76,7 +76,7 @@
       <div class="content-side content-side-full">
         <ul class="nav-main">
           <li class="nav-main-item">
-            <a class="nav-main-link {{ Request::is('consoles/home*') ? 'active' : '' }}" href="{{ route('home') }}">
+            <a class="nav-main-link {{ Request::is('home*') ? 'active' : '' }}" href="{{ route('home') }}">
               <i class="nav-main-link-icon fa fa-house-user"></i>
               <span class="nav-main-link-name">{{ trans('page.overview.title') }}</span>
             </a>
@@ -85,7 +85,7 @@
           @canany(['roles.index', 'users.index'])
           <li class="nav-main-heading">{{ trans('Management') }}</li>
 
-          <li class="nav-main-item {{ Request::is('consoles/settings*') ? 'open' : '' }}">
+          <li class="nav-main-item {{ Request::is('settings*') ? 'open' : '' }}">
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="{{ Request::is('settings*') ? 'true' : 'false' }}" href="#">
               <i class="nav-main-link-icon fa fa-cog"></i>
               <span class="nav-main-link-name">{{ trans('Pengaturan') }}</span>
@@ -93,14 +93,14 @@
             <ul class="nav-main-submenu">
               @can('users.index')
               <li class="nav-main-item">
-                <a class="nav-main-link {{ Request::is('consoles/settings/users*') ? 'active' : '' }}" href="{{ route('users.index') }}">
+                <a class="nav-main-link {{ Request::is('settings/users*') ? 'active' : '' }}" href="{{ route('users.index') }}">
                   <span class="nav-main-link-name">{{ trans('page.users.title') }}</span>
                 </a>
               </li>
               @endcan
               @can('roles.index')
               <li class="nav-main-item">
-                <a class="nav-main-link {{ Request::is('consoles/settings/roles*') ? 'active' : '' }}" href="{{ route('roles.index') }}">
+                <a class="nav-main-link {{ Request::is('settings/roles*') ? 'active' : '' }}" href="{{ route('roles.index') }}">
                   <span class="nav-main-link-name">{{ trans('page.roles.title') }}</span>
                 </a>
               </li>
