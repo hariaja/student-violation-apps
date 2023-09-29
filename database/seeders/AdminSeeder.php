@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
       'name' => 'Administrator',
       'email' => 'admin@gmail.com',
       'email_verified_at' => now(),
-      'password' => bcrypt(Helper::DEFAULT_PASSWORD),
+      'password' => bcrypt(Helper::DEFAULT_PASSWORD), // password
       'status' => true,
     ])->assignRole(RoleType::ADMIN->value);
   }
