@@ -58,6 +58,15 @@ class PermissionList
       'students.edit',
       'students.update',
       'students.destroy',
+
+      // Halaman Perhitungan
+      'counts.index',
+      'counts.create',
+      'counts.store',
+      'counts.show',
+      'counts.edit',
+      'counts.update',
+      'counts.destroy',
     ];
   }
 }

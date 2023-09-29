@@ -82,6 +82,16 @@
             </a>
           </li>
 
+          @can('counts.index')
+          <li class="nav-main-heading">{{ trans('Riwayat') }}</li>
+          <li class="nav-main-item">
+            <a class="nav-main-link {{ Request::is('counts*') ? 'active' : '' }}" href="{{ route('counts.index') }}">
+              <i class="nav-main-link-icon fa fa-calculator"></i>
+              <span class="nav-main-link-name">{{ trans('page.counts.title') }}</span>
+            </a>
+          </li>
+          @endcan
+
           @canany(['achievements.index', 'violations.index', 'rooms.index'])
           <li class="nav-main-heading">{{ trans('Master Data') }}</li>
 

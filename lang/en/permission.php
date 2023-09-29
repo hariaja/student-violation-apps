@@ -78,4 +78,17 @@ return [
     'delete' => 'Hapus Permanen Kelas yang sudah Terhapus dari penyimpanan',
     'restore' => 'Restore Data Kelas yang ditentukan dari penyimpanan yang sudah dihapus',
   ],
+
+  'counts' => [
+    'name' => 'Management Perhitungan',
+    'index' => 'Menampilkan daftar Perhitungan',
+    'create' => 'Tampilkan formulir untuk membuat Perhitungan baru',
+    'store' => 'Simpan Perhitungan yang baru dibuat di penyimpanan',
+    'show' => 'Menampilkan Detail Perhitungan yang ditentukan',
+    'edit' => 'Tampilkan formulir untuk mengedit Perhitungan yang ditentukan',
+    'update' => 'Perbarui Perhitungan yang ditentukan dalam penyimpanan',
+    'destroy' => 'Hapus Perhitungan yang ditentukan dari penyimpanan',
+    'delete' => 'Hapus Permanen Perhitungan yang sudah Terhapus dari penyimpanan',
+    'restore' => 'Restore Data Perhitungan yang ditentukan dari penyimpanan yang sudah dihapus',
+  ],
 ];

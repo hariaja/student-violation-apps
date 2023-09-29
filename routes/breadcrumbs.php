@@ -139,3 +139,25 @@ Breadcrumbs::for('rooms.show', function (BreadcrumbTrail $trail, $room) {
   $trail->push(trans('page.rooms.show'), route('rooms.show', $room->uuid));
 });
 // rooms Breadcrumbs
+
+// counts Breadcrumbs
+Breadcrumbs::for('counts.index', function (BreadcrumbTrail $trail) {
+  $trail->parent('home');
+  $trail->push(trans('page.counts.index'), route('counts.index'));
+});
+
+Breadcrumbs::for('counts.create', function (BreadcrumbTrail $trail) {
+  $trail->parent('counts.index');
+  $trail->push(trans('page.counts.create'), route('counts.create'));
+});
+
+Breadcrumbs::for('counts.edit', function (BreadcrumbTrail $trail, $count) {
+  $trail->parent('counts.index');
+  $trail->push(trans('page.counts.edit'), route('counts.edit', $count->uuid));
+});
+
+Breadcrumbs::for('counts.show', function (BreadcrumbTrail $trail, $count) {
+  $trail->parent('counts.index');
+  $trail->push(trans('page.counts.show'), route('counts.show', $count->uuid));
+});
+// counts Breadcrumbs

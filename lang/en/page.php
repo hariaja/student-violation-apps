@@ -66,4 +66,13 @@ return [
     'show' => 'Detail Kelas',
     'delete' => 'Hapus Kelas',
   ],
+
+  'counts' => [
+    'title' => 'Perhitungan',
+    'index' => 'Daftar Perhitungan',
+    'create' => 'Tambah Perhitungan',
+    'edit' => 'Ubah Perhitungan',
+    'show' => 'Detail Perhitungan',
+    'delete' => 'Hapus Perhitungan',
+  ],
 ];

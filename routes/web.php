@@ -8,7 +8,9 @@ use App\Http\Controllers\Master\ViolationController;
 use App\Http\Controllers\Settings\StudentController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Master\AchievementController;
+use App\Http\Controllers\Master\CountController;
 use App\Http\Controllers\Master\RoomController;
+use App\Providers\RouteServiceProvider;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@ use App\Http\Controllers\Master\RoomController;
 */
 
 Route::get('/', function () {
-  return view('welcome');
+  return redirect(RouteServiceProvider::HOME);
 });
 
 require __DIR__ . '/auth.php';
@@ -61,4 +63,7 @@ Route::middleware([
     // Room management
     Route::resource('rooms', RoomController::class)->except('show');
   });
+
+  // Counts
+  Route::resource('counts', CountController::class)->except('edit', 'update');
 });

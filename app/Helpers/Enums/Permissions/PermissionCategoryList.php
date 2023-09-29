@@ -14,4 +14,5 @@ enum PermissionCategoryList: string
   case VIOLATIONS = 'violations.name';
   case STUDENTS = 'students.name';
   case ROOMS = 'rooms.name';
+  case COUNTS = 'counts.name';
 }
