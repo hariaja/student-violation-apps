@@ -3,6 +3,7 @@
 namespace App\DataTables\Settings;
 
 use App\Models\Role;
+use App\Helpers\Helper;
 use Yajra\DataTables\Html\Column;
 use App\Services\Role\RoleService;
 use Yajra\DataTables\EloquentDataTable;
@@ -83,7 +84,7 @@ class RoleDataTable extends DataTable
   public function getColumns(): array
   {
     // Check Visibility of Action Row
-    $visibility = me()->canAny([
+    $visibility = Helper::checkPermissions([
       'roles.edit',
       'roles.destroy',
     ]);

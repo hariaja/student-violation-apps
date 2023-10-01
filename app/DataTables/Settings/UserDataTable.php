@@ -4,6 +4,7 @@ namespace App\DataTables\Settings;
 
 use App\Models\User;
 use App\Helpers\Enums\RoleType;
+use App\Helpers\Helper;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use App\Services\User\UserService;
@@ -98,6 +99,11 @@ class UserDataTable extends DataTable
   {
     $visibility = isRoleName() === RoleType::ADMIN->value ? true : false;
 
+    $action = Helper::checkPermissions([
+      'users.edit',
+      'users.destroy',
+    ]);
+
     return [
       Column::make('DT_RowIndex')
         ->title(trans('#'))
@@ -124,6 +130,7 @@ class UserDataTable extends DataTable
       Column::computed('action')
         ->exportable(false)
         ->printable(false)
+        ->visible($action)
         ->width('5%')
         ->addClass('text-center'),
     ];

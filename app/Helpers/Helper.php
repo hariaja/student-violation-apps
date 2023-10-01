@@ -93,4 +93,19 @@ class Helper
 
     return $text;
   }
+
+  /**
+   * Check permission to action datatables;
+   *
+   * @param  mixed $permissions
+   * @return void
+   */
+  public static function checkPermissions(array $permissions = []): bool
+  {
+    if (me()->canAny($permissions)) :
+      return true;
+    endif;
+
+    return false;
+  }
 }

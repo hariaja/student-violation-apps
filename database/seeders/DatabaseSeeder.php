@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
       UserSeeder::class,
       AchievementSeeder::class,
       ViolationSeeder::class,
+      RoomSeeder::class,
     ]);
   }
 }

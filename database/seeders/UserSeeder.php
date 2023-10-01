@@ -22,5 +22,13 @@ class UserSeeder extends Seeder
       'password' => bcrypt(Helper::DEFAULT_PASSWORD),
       'status' => true,
     ])->assignRole(RoleType::BK->value);
+
+    User::create([
+      'name' => 'Brendan Roger',
+      'email' => 'roger@gmail.com',
+      'email_verified_at' => now(),
+      'password' => bcrypt(Helper::DEFAULT_PASSWORD),
+      'status' => true,
+    ])->assignRole(RoleType::WALI->value);
   }
 }

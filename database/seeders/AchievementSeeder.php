@@ -15,6 +15,10 @@ class AchievementSeeder extends Seeder
   {
     $datas = [
       [
+        'name' => 'Tidak Memiliki Prestasi Apapun',
+        'point' => 1,
+      ],
+      [
         'name' => 'Juara Kelas 10 Besar',
         'point' => 1,
       ],
