@@ -30,6 +30,7 @@ Route::get('/', function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('home/data-chart', [HomeController::class, 'chart'])->name('home.chart');
 
 Route::middleware([
   'auth',

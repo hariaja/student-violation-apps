@@ -18,7 +18,7 @@ class RoomSeeder extends Seeder
 
     Room::create([
       'user_id' => $wali->id,
-      'name' => 'XII',
+      'name' => 'VII',
     ]);
   }
 }
