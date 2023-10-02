@@ -57,19 +57,17 @@ class CountServiceImplement extends Service implements CountService
 
       // Mari kita hitung step by step
       // Mencari nilai drajat untuk prestasi
-      $achievementKecil = Achievement::kecil(12);
-      $achievementSedang = Achievement::sedang(12);
-      $achievementBesar = Achievement::besar(12);
+      $achievementKecil = Achievement::kecil($achievementPoint);
+      $achievementSedang = Achievement::sedang($achievementPoint);
+      $achievementBesar = Achievement::besar($achievementPoint);
 
       // Mencari nilai drajat untuk pelanggaran
-      $violationRinganSekali = Violation::ringanSekali(90);
-      $violationRingan = Violation::ringan(90);
-      $violationSedang = Violation::sedang(90);
-      $violationBerat = Violation::berat(90);
-      $violationBeratSekali = Violation::beratSekali(90);
-      $violationSangatBeratSekali = Violation::sangatBeratSekali(90);
-
-
+      $violationRinganSekali = Violation::ringanSekali($violationPoint);
+      $violationRingan = Violation::ringan($violationPoint);
+      $violationSedang = Violation::sedang($violationPoint);
+      $violationBerat = Violation::berat($violationPoint);
+      $violationBeratSekali = Violation::beratSekali($violationPoint);
+      $violationSangatBeratSekali = Violation::sangatBeratSekali($violationPoint);
 
       // Mencari Nilai z dengan rumus aturan.
       $rule1 = min($violationRinganSekali, $achievementKecil);
