@@ -7,7 +7,7 @@ class Violation
   public static function ringanSekali($violation)
   {
     if ($violation <= 3) {
-      return 0;
+      return 1;
     } elseif ($violation >= 3 and $violation <= 50) {
       return (50 - $violation) / (50 - 3);
     } else {

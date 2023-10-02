@@ -57,21 +57,26 @@ class CountServiceImplement extends Service implements CountService
 
       // Mari kita hitung step by step
       // Mencari nilai drajat untuk prestasi
-      $achievementKecil = Achievement::kecil($achievementPoint);
-      $achievementSedang = Achievement::sedang($achievementPoint);
-      $achievementBesar = Achievement::besar($achievementPoint);
+      $achievementKecil = Achievement::kecil(12);
+      $achievementSedang = Achievement::sedang(12);
+      $achievementBesar = Achievement::besar(12);
 
       // Mencari nilai drajat untuk pelanggaran
-      $violationRinganSekali = Violation::ringanSekali($violationPoint);
-      $violationRingan = Violation::ringan($violationPoint);
-      $violationSedang = Violation::sedang($violationPoint);
-      $violationBerat = Violation::berat($violationPoint);
-      $violationBeratSekali = Violation::beratSekali($violationPoint);
-      $violationSangatBeratSekali = Violation::sangatBeratSekali($violationPoint);
+      $violationRinganSekali = Violation::ringanSekali(90);
+      $violationRingan = Violation::ringan(90);
+      $violationSedang = Violation::sedang(90);
+      $violationBerat = Violation::berat(90);
+      $violationBeratSekali = Violation::beratSekali(90);
+      $violationSangatBeratSekali = Violation::sangatBeratSekali(90);
+
+
 
       // Mencari Nilai z dengan rumus aturan.
       $rule1 = min($violationRinganSekali, $achievementKecil);
       $z1 = 50 - $rule1 * (50 - 3); // Ringan Sekali
+
+      // Mencari nilai Z itu rumusnya:
+      // Nilai Z Max - Nilai Alpha * (Z Max - Z min)
 
       $rule2 = min($violationRinganSekali, $achievementSedang);
       $z2 = 50 - $rule2 * (50 - 3); // Ringan Sekali
@@ -155,8 +160,6 @@ class CountServiceImplement extends Service implements CountService
       $payload['qualification'] = $qualification;
       $payload['description'] = $description;
 
-      $this->mainRepository->create($payload);
-
       // dd([
       //   'pelanggaran ringanSekali' => $violationRinganSekali,
       //   'pelanggaran ringan' => $violationRingan,
@@ -238,6 +241,8 @@ class CountServiceImplement extends Service implements CountService
       //   'qualification' => $qualification,
       //   'description' => $description,
       // ]);
+
+      $this->mainRepository->create($payload);
 
       DB::commit();
     } catch (\Exception $e) {
